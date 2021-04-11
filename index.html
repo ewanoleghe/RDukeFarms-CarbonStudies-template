@@ -1,313 +1,587 @@
+
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>R-Ladies Themed xaringan Template</title>
+    <title>Duke Fields</title>
     <meta charset="utf-8" />
-    <meta name="author" content="R-Ladies Global" />
-    <script src="libs/header-attrs-2.6.2/header-attrs.js"></script>
+    <meta name="author" content="Daniel Gimenez, Professor Stephanie Murphy, Dr Ewan Oleghe, Dr." />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/rladies-mod.css" type="text/css" />
+    <link href="libs/remark-css-0.0.1/rutgers-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+    <script src="libs/jquery-1.12.4/jquery.min.js"></script>
+    <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-1.3.1/leaflet.js"></script>
+    <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+    <script src="libs/proj4-2.6.2/proj4.min.js"></script>
+    <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+    <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+    <script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+    <script src="libs/FlatGeoBuf-3.3.3/fgb.js"></script>
+    <script src="libs/FlatGeoBuf-3.3.3/flatgeobuf-geojson.min.js"></script>
+    <script src="libs/chromajs-2.1.0/chroma.min.js"></script>
+    <link id="locations_Sk-1-attachment" rel="attachment" href="libs/locations_Sk-0.0.1/locations_Sk_layer.fgb"/>
+    <link href="libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
+    <script src="libs/HomeButton-0.0.1/home-button.js"></script>
+    <script src="libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
+    <script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+    <link href="libs/mapviewCSS-0.0.1/mapview-popup.css" rel="stylesheet" />
+    <link href="libs/mapviewCSS-0.0.1/mapview.css" rel="stylesheet" />
+    <link id="locations_Gz-1-attachment" rel="attachment" href="libs/locations_Gz-0.0.1/locations_Gz_layer.fgb"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84972342-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-84972342-5');
+    </script>
+    <link rel="stylesheet" href="libs/lyngs_style.css" type="text/css" />
+    <link rel="stylesheet" href="libs/cols.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="libs/css/academicons.min.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 
+.row[
+.col-7[
+.title[
+###Duke Farms Carbon Project.
+]
+ 
 
-
-
-class: title-slide, center, middle, inverse
-background-image: url(img/PurpleSky.jpg)
-background-position: bottom
-background-size: cover
-
-# R-Ladies Themed&lt;br&gt;xaringan Template
-
-Photo by [Vincentiu Solomon](https://unsplash.com/@vincentiu)
-
-???
-This slide uses:
-- a custom `title-slide` class that removes the slide number from the title slide
-- a background image
-  - background-image: url(img/PurpleSky.jpg)
-  - background-position: bottom
-  - background-size: cover
-
----
-class: inverse, middle, center
-
-&lt;img style="border-radius: 50%;" 
-src="img/RLadiesGlobal.png"
-width="150px"
-/&gt;
-
-# R-Ladies Global 
-
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 512 512"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/&gt;&lt;/svg&gt; rladies.org](https://rladies.org)&lt;br/&gt;
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; @RLadiesGlobal](https://twitter.com/rladiesglobal)&lt;br/&gt;
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 512 512"&gt;&lt;path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/&gt;&lt;/svg&gt; info@rladies.org](mailto:info@rladies.org)&lt;br&gt;
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 448 512"&gt;&lt;path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/&gt;&lt;/svg&gt; Join the Slack](https://rladies-community-slack.herokuapp.com/)
-
-???
-Hello! My name is R-Ladies Global and I'm excited to be here to help promote gender diversity in the R community.
-
---
-
-If you like this R-Ladies themed xaringan template, you can copy it to your computer: **usethis::use_course("spcanelon/RLadies-xaringan-template")**
-
-And learn how to deploy xaringan slides to GitHub Pages in this blog post:&lt;br&gt; [silvia.rbind.io/2021-03-16-deploying-xaringan-slides](https://silvia.rbind.io/2021-03-16-deploying-xaringan-slides)
-
-???
-This slide uses:
-- the `inverse`, `middle`, and `center` slide classes
-- an image inserted with html
-
----
-
-.left-column[
-# R-Ladies Global
+.subtitle[
+#### &lt;span style="color: red;"&gt;Duke Fields - Impact of land use and soil series on soil carbon stock&lt;/span&gt;
+##### Project update, 19-22 March 2021
+]
+.author[
+##### Daniel Gimenez, Professor.&lt;br/&gt;Stephanie Murphy, Dr.&lt;br/&gt;Ewan Oleghe, Dr.
 ]
 
-.right-column[
-
-## Mission 
-
-R-Ladies is a worldwide organization whose mission is to promote Gender Diversity in the R community.
-
-The R community suffers from an underrepresentation of minority genders (including but not limited to cis/trans women, trans men, non-binary, genderqueer, agender) in every role and area of participation, whether as leaders, package developers, conference speakers, conference participants, educators, or users (see recent stats).
-
-
-.footnote[
-
-----
-Original source: https://rladies.org/about-us]
+.affiliation[
+##### Department of Environmental Sciences &lt;br&gt; Rutgers, The State University of New Jersey
 ]
 
-???
-This slide uses:
-- the `.left-column[]` and `.right-column[]` classes
-- a horizontal bar
-- the `.footnote[]` class
-
----
-# Making lists and emphasizing text
-
---
-
-The R-Ladies Community has:
-
---
-
-* 85,144 members
-
---
-
-* Across 56 countries
-
---
-
-* and 198 chapters worldwide
-
---
-
-
------
-
-And with the help of Markdown you can write text in **bold** and _italics_
-
---
-
-1. And make numbered lists
-1. like this one
-
-.footnote[
-These numbers come from the [Shiny R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) developed by Ben Ubah
 ]
 
-???
-This slide uses:
-- bullet list with `*`
-- incremental slides divided by `--`
-- numbered list with `1.`
-- a horizontal bar
-- the `.footnote[]` class
+.col-5[
+
+.logo[
+![](figures/df_1.jpeg)&lt;!-- --&gt;
+]
+&lt;br&gt;
+&lt;br&gt;
+---
+Slides:&lt;br&gt; 30 slides
+
+Data set:&lt;br&gt; [**CLICK HERE TO DOWNLOAD**](https://github.com/ewanoleghe/Duke-farms/blob/main/Data_150.xlsx)
+
+
+]
+
+]
+
 
 ---
-# Inserting images
+class: center, middle
+### Part 1: Sampling
+
+---
+##### 1.1. Field Sampling
+
+--
+###### 1.1.1.) ...  landuse
+
+&lt;img src="map/df.png" width="70%" /&gt;
+
+---
+###### 1.1.2.) ...  and soil series
+
+&lt;img src="map/sk1.png" width="75%" /&gt;
+
+---
+##### 1.2.) ...  using a grid
+
+&lt;img src="map/sk2.png" width="70%" /&gt;
+---
+###### 1.2.1.) ...  with reular equalateral triangular spacing
+
+&lt;img src="map/skeet.png" width="70%" /&gt;
+
+Example: Shows 30 meters triangular sampling point laid over different soil series within a grid.
+---
+##### 1.2.2.) ...  and random sampling
+
+&lt;img src="map/sk2.png" width="70%" /&gt;
+---
+class: center, middle
+### Part 2. Summary &amp; Statistics
 
 
-```r
-knitr::include_graphics("img/RLadiesMap.png")
+---
+##### 2.1.) Total number of samples.
+###### 2.1.1.) Grid sampling (Spatial dstribution of soil organic carbon)
+Landuse     |  n  |&lt;-    |      |  Soil|series |      |    -&gt;|Total  
+------------|-----|------|------|------|-------|------|------|------
+            |     | PeoC | PenB |KkoC  |KkoD   |PeoB  | RehB |      
+Agriculture |333  |32    | 140  |143   |18     | -    | -    |333   
+Grassland   |443	|56    | 201  |186   |  -    | -    | -    |443   
+Forest      |206 	|  -   |  -   |  -   |  -    |97    |109   |206  
+|           
+Total       |982	|  -   | -    | -    | -     | -    | -    |982     
+
+
+--
+###### 2.1.2.) Random sampling (Vertical dstribution of soil organic carbon)
+Landuse     |  n  |&lt;-Soil|series|   -&gt; |Total  
+------------|-----|------|------|------|-------
+            |     | PeoC | PenB |KkoC  |      
+Agriculture |136  |41    | 44   |51    |136   
+Grassland   |140	|42    | 45   |53    |140   
+Wetlands    |60  	|  -   |  -   |  -   |60  
+|           
+Total       |336	|  -   | -    | -    |336     
+
+
+---
+##### 2.2.) Grid sampling - Summary statistics
+
+###### (2.2.1.) Grassland - Skeet shoot field
+###### **Table 1:** Descriptive statistics of soil organic C (Total_C) concentration, nitrogen concentration (Total_N), and organic matter (OM). Values are based on the 1st sample set (n = 150). Soil properties represent the top 15 cm of Duke Farm's grassland (skeet shoot field) soil.
+&lt;!-- &lt;font size="-2"&gt; --&gt;
+
+|           |     |      | N       |      |                 |  |      |  C     |     |                  |  |     |     OM |     |       
+------------|-----|------|---------|------|-----------------|--|------|--------|-----|------------------|--|-----|--------|-----|-------
+Soil series | n   | Min	 | Median  | Max  | Mean            |  |Min   | Median | Max | Mean             |  |Min	 | Median | Max | Mean  
+KkoC        |60 	|0.108 |	0.170	 |0.227 |0.172&lt;sup&gt;a&lt;/sup&gt;|  |0.975 |1.684   |2.360|1.673&lt;sup&gt;a &lt;/sup&gt;|  |1.681|	2.903 |4.069|2.885&lt;sup&gt;a&lt;/sup&gt; 
+PenB        |65 	|0.094 |	0.161	 |0.310 |0.161&lt;sup&gt;a&lt;/sup&gt;|  |0.767 |1.556   |3.251|1.591&lt;sup&gt;a &lt;/sup&gt;|  |1.322|	2.683 |5.605|2.744&lt;sup&gt;a&lt;/sup&gt; 
+PeoC        |25 	|0.099 |	0.141	 |0.189 |0.144&lt;sup&gt;b&lt;/sup&gt;|  |0.853 |1.364   |1.849|1.347&lt;sup&gt;b &lt;/sup&gt;|  |1.471|	2.352 |3.188|2.323&lt;sup&gt;b&lt;/sup&gt;
+
+where N =  Total Nitrogen, C = Total Carbon and OM = organic matter
+&lt;!-- &lt;/font&gt; --&gt;
+---
+###### (2.2.2.) Agriculture - Grazed field
+###### **Table 2:** Descriptive statistics of soil organic C (Total_C) concentration, nitrogen concentration (Total_N), and organic matter (OM). Values are based on the 1st sample set (n = 150). Soil properties represent the top 15 cm of Duke Farm's agriculture (grazed field) soil
+
+|           |     |      |N        |      |       |  |     |   C    |     |       |  |     |   OM   |     |      
+------------|-----|------|---------|------|-------|--|-----|--------|-----|-------|--|-----|--------|-----|-------
+Soil series | n   | Min	 | Median  | Max  | Mean  |  |Min  | Median | Max | Mean  |  |Min	 | Median | Max | Mean
+KkoC        |25 	|0.100 |	0.180	 |0.310 |0.188  |  |0.990|1.800	  |3.120|1.874  |  |1.700|	3.100 |5.380|3.220
+KkoD        |13 	|0.130 |	0.220	 |0.390 |0.231  |  |1.240|2.180	  |4.050|2.317  |  |2.140|	3.760 |6.970|3.992 
+PenB        |36 	|0.060 |	0.205	 |0.310 |0.192  |  |0.250|2.150	  |3.520|1.952  |  |0.420|	3.705 |6.070|3.366 
+PeoC        |26 	|0.120 |	0.210	 |0.390 |0.218  |  |1.260|2.090	  |3.800|2.199  |  |2.170|	3.600 |6.540|3.790
+
+where N =  Total Nitrogen, C = Total Carbon and OM = organic matter
+
+---
+###### (2.2.3.) Forest
+###### **Table 3:** Descriptive statistics of soil organic C (Total_C) concentration, nitrogen concentration (Total_N), and organic matter (OM). Values are based on the 1st sample set (n = 150). Soil properties represent the top 15 cm of Duke Farm's agriculture (xxxx forest) soil
+
+|           |     |      |N        |      |       |  |     |   C    |     |       |  |     |   OM   |      |      
+------------|-----|------|---------|------|-------|--|-----|--------|-----|-------|--|-----|--------|------|-------
+Soil series | n   | Min	 | Median  | Max  | Mean  |  |Min  | Median | Max | Mean  |  |Min	 | Median | Max  | Mean
+PeoB        |21 	|0.082 |	0.266	 |0.496 |0.272  |  |0.897|3.739	  |7.422|3.986  |  |1.547|	6.447 |12.797|6.872
+RehB        |29 	|0.055 |	0.259	 |0.430 |0.246  |  |0.429|3.654	  |6.696|3.482  |  |0.740|	6.300 |11.545|6.004 
+
+where N =  Total Nitrogen, C = Total Carbon and OM = organic matter
+
+---
+###### **Table 2:** Analysis of variance for soil organic C (Total_C) concentration, nitrogen concentration (Total_N), and organic matter (OM) for Duke Farm's grassland (skeet shoot field) soil n = 150.
+									
+Parameters|          |df  |Sum Sq|Mean Sq|F value|Pr(&gt;F) 
+----------|----------|----|------|-------|-------|-------
+Total_C   |S_Series  |2  	|1.881 | 0.940 |7.492  |0.001***
+|         |Residuals |147 |18.450| 0.126 |-      |-      
+|       
+Total_N   |S_Series  |2	  |0.014 |0.007  |7.481  |0.001***
+|         |Residuals |147 |0.137 |0.001  |-      | -      
+|        
+OM        |S_Series  |2	  |5.590 |2.795  |7.492  |0.001***
+|         |Residuals |147 |54.845|0.373  |-      | -      
+
+---
+
+
+
+
+
+
+
+###### 2.3.) Grassland - Skeet shoot field **ANOVA of sampling distance and soil effects on Total_C:** 
+
+```
+##                    Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## distance            2  0.286  0.1428   1.200 0.304345    
+## S_Series            2  1.969  0.9843   8.271 0.000401 ***
+## distance:S_Series   4  1.296  0.3239   2.722 0.031969 *  
+## Residuals         141 16.781  0.1190                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-&lt;img src="img/RLadiesMap.png" title="World map with countries that have R-Ladies chapters highlighted in purple" alt="World map with countries that have R-Ladies chapters highlighted in purple" width="452" /&gt;
+###### 2.4.) Grassland - Skeet shoot field **ANOVA for soil series:** 
 
---
-
-&gt; Note: You can use the `fig.alt` code chunk option to add alternative text to your images, that way they are accessible to screen reader users:
-- In code chunk: `{r, fig.alt = "&lt;descriptive alt text&gt;"}`.
-- Read more about this in [{knitr} NEWS.md](https://github.com/yihui/knitr/blob/master/NEWS.md#new-features-1)
-
-???
-This slide uses:
-- an image inserted with `knitr::include_graphics()`
-- the `fig.alt =` code chunk option for alternative text
+```
+##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## S_Series      2  1.881  0.9403   7.492 0.000798 ***
+## Residuals   147 18.450  0.1255                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
 
 ---
-# Tables and quotes
-
-### Table
-
+######  2.5.) Grassland - Skeet shoot field **POSTHOC TEST:** 
 .pull-left[
 
-`palmerpenguins::penguins`
+```
+## 
+## Study: IMPACT OF SOIL SERIES ON CARBON CONTENT
+## 
+## HSD Test for Total_C 
+## 
+## Mean Square Error:  0.1190116 
+## 
+## S_Series,  means
+## 
+##       Total_C       std  r   Min   Max
+## KkoC 1.673217 0.3278467 60 0.975 2.360
+## PenB 1.591369 0.4033851 65 0.767 3.251
+## PeoC 1.347400 0.2657072 25 0.853 1.849
+## 
+## Alpha: 0.05 ; DF Error: 141 
+## Critical Value of Studentized Range: 3.349881 
+## 
+## Groups according to probability of means differences and alpha level( 0.05 )
+## 
+## Treatments with the same letter are not significantly different.
+## 
+##       Total_C groups
+## KkoC 1.673217      a
+## PenB 1.591369      a
+## PeoC 1.347400      b
+```
+]
+.pull-right[
 
-The `penguins` dataset contains size measurements for adult penguins nesting near Palmer Station in Antarctica.
 
-Measurements like `body_mass_g`
+```
+## 
+## Study: IMPACT OF SAMPLING DISTANCE ON CARBON CONTENT
+## 
+## HSD Test for Total_C 
+## 
+## Mean Square Error:  0.1190116 
+## 
+## distance,  means
+## 
+##      Total_C       std  r   Min   Max
+## 0.5 1.636875 0.4084768 56 0.975 2.764
+## 15  1.523259 0.3120135 27 0.874 2.200
+## 30  1.563045 0.3554102 67 0.767 3.251
+## 
+## Alpha: 0.05 ; DF Error: 141 
+## Critical Value of Studentized Range: 3.349881 
+## 
+## Groups according to probability of means differences and alpha level( 0.05 )
+## 
+## Treatments with the same letter are not significantly different.
+## 
+##      Total_C groups
+## 0.5 1.636875      a
+## 30  1.563045      a
+## 15  1.523259      a
+```
+]
+---
+###### 2.6.) **Mean ranking - Grassland** 
+.pull-left[
+###### a.) Soil series
+
+![](slide_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
 ]
 
 .pull-right[
 
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; species &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; island &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; body_mass_g &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Chinstrap &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Dream &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2700 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelie &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Biscoe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2850 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelie &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Biscoe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2850 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelie &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Biscoe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2900 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelie &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Dream &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2900 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelie &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2900 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+###### b.) Sampling distance
+![](slide_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
 ]
-
-???
-This slide uses:
-- the `.pull-left[]` and `.pull-right[]` classes
-- an R code chunk to produce the html table
-
---
-
-### Quote
-
-&gt; You can read more about the `palmerpenguins` data package authored and maintained by Allison Horst at [allisonhorst.github.io/palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
-
-???
-- a quote with `&gt;`
-
----
-# Highlighting code
-
-`&gt; This is what inline code looks like`
-
-You can highlight lines of code within code chunks using `#&lt;&lt;`:
-
-### Code
-
-```r
-palmerpenguins::penguins %&gt;%
-  ggplot(aes(x = island, y = body_mass_g)) +
-  geom_boxplot(aes(fill = island))               #&lt;&lt;
-```
-
-### Output
-
-
-```r
-palmerpenguins::penguins %&gt;%
-  ggplot(aes(x = species, y = body_mass_g)) +
-* geom_boxplot(aes(fill = island))
-```
-
-???
-This slide uses:
-- inline code highlighting with backticks ` `` `
-- a code chunk to produce a ggplot
-
 ---
 
 
-```r
-palmerpenguins::penguins %&gt;%
-  ggplot(aes(x = species, y = body_mass_g)) +
-  geom_boxplot(aes(fill = island))               
-```
 
-![](index_files/figure-html/penguin-body-mass-1.png)&lt;!-- --&gt;
 
-???
-This slide uses:
-- a code chunk to produce a ggplot
-- code chunk option `fig.height = 4.5` to control the figure height
 
----
-class: middle, inverse, title-slide
+
+###### 2.7.)  Spatial plot of soil organic carbon concentration
 
 .pull-left[
-# Thank you!
-&lt;br/&gt;
-## R-Ladies Global  
-
-### Promoting gender diversity in the R community
+##### Grassland
+![](slide_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
 ]
 
 .pull-right[
-.right[
-&lt;img style="border-radius: 50%;"
-src="img/RLadiesGlobal.png"
-width="150px" /&gt;
+##### Agriculture
+![](slide_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+]
+---
+class: center, middle
+### Part 3. Spatial Study
 
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 512 512"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/&gt;&lt;/svg&gt; rladies.org](https://rladies.org)&lt;br/&gt;
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; @RLadiesGlobal](https://twitter.com/rladiesglobal)&lt;br/&gt;
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 512 512"&gt;&lt;path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/&gt;&lt;/svg&gt; info@rladies.org](mailto:info@rladies.org)&lt;br&gt;
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFFFFF;" viewBox="0 0 448 512"&gt;&lt;path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/&gt;&lt;/svg&gt; Join the Slack](https://rladies-community-slack.herokuapp.com/)
-]]
+---
+###### 3.1.) **Compute undirected (isotropic) empirical semivariogram**
 
-???
-Thank you for joining me!
-You can find my contact information linked on this slide if you want to get in touch, and I'm happy to take any questions.
 
-This slide also uses:
-- the `title-slide` class, to remove the slide number at the bottom :)
+###### 3.1a.) R codes to calculation number of pairs for undirected (isotropic) empirical semivariogram
+
+
+````markdown
+```{r setup, include=FALSE}
+# Group by landuse - subset
+skeetSub = subset(mData, landuse== "Grassland");
+grazedSub = subset(mData, landuse== "Agriculture");
+
+*library(gstat)
+
+*var1 &lt;- variogram(Total_C ~ 1, ~x.axis + y.axis, cutoff = 480, width = 55, data = skeetSub)
+*var2 &lt;- variogram(Total_C ~ 1, ~x.axis + y.axis, cutoff = 480, width = 55, data = grazedSub)
+
+```
+
+---
+###### 3.1b.) **Compute undirected (isotropic) empirical semivariogram**
+
+.pull-left[
+###### Grassland
+![](slide_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+]
+.pull-right[
+##### Agriculture
+
+![](slide_files/figure-html/unnamed-chunk-21-1.png)&lt;!-- --&gt;
+]
+###### **Figure 1:** Undirected semivariogram of Total_C for Grassland and Agriculture fields. 
+
+---
+###### 3.2.) compute semivariogram model based on the empiral semivariogram**
+
+
+
+
+###### 3.2a.) show nugget, psill and range of the semivariogram model
+
+.pull-left[
+###### Grassland
+
+```
+##   model    psill    range
+## 1   Nug 0.000000  0.00000
+## 2   Exp 0.134636 23.38693
+```
+ 
+
+######  (weighted) sum of squared errors of the fitted model
+
+```
+## [1] 4.436775
+```
+]
+
+.pull-right[
+###### Agriculture
+
+```
+##   model     psill    range
+## 1   Nug 0.7980570    0.000
+## 2   Exp 0.5443776 2936.155
+```
+ 
+
+###### (weighted) sum of squared errors of the fitted model
+
+```
+## [1] 336.8274
+```
+
+]
+---
+&lt;!-- --- #fit plot --&gt;
+###### 3.3.) Fit of theoretical semivariograms to those empirical semivariograms
+
+.pull-left[
+###### Grassland
+![](slide_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+###### Agriculture -replace with grazed
+![](slide_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
+
+]
+
+---
+
+&lt;!--  CONVERT THE DATAFRAME TO SPATIAL POINTS  --&gt;
+
+&lt;!-- --- # Create Kriging map for experimental area --&gt;
+
+
+
+
+
+
+
+###### 3.4.) Scatterplot plot of total carbon concentration
+
+.pull-left[
+###### Grassland
+![](slide_files/figure-html/unnamed-chunk-33-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+###### Agriculture
+![](slide_files/figure-html/unnamed-chunk-34-1.png)&lt;!-- --&gt;
+]
+
+
+```
+## [using ordinary kriging]
+```
+
+
+```
+## [using ordinary kriging]
+```
+---
+
+###### 3.5.) Kriging &amp; Predict carbon content for each field
+
+###### 3.5a.) using ordinary kriging
+.pull-left[
+###### Grassland
+
+![](slide_files/figure-html/unnamed-chunk-37-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+###### Agriculture
+![](slide_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
+]
+
+---
+class: center, middle
+### Part 4. Elevation &amp; Maps
+
+---
+###### 4.1.) **Relationship between elevation and total organic carbon**
+
+.pull-left[
+###### Grassland
+
+![](slide_files/figure-html/unnamed-chunk-39-1.png)&lt;!-- --&gt;
+]
+.pull-right[
+##### Agriculture
+
+![](slide_files/figure-html/unnamed-chunk-40-1.png)&lt;!-- --&gt;
+]
+
+---
+###### 4.2.) **Relationship between elevation and total nitrogen**
+
+.pull-left[
+###### Grassland
+
+![](slide_files/figure-html/unnamed-chunk-41-1.png)&lt;!-- --&gt;
+]
+.pull-right[
+##### Agriculture
+
+![](slide_files/figure-html/unnamed-chunk-42-1.png)&lt;!-- --&gt;
+]
+---
+###### 4.3.) **Relationship between elevation and organic matter**
+
+.pull-left[
+###### Grassland
+
+![](slide_files/figure-html/unnamed-chunk-43-1.png)&lt;!-- --&gt;
+]
+.pull-right[
+##### Agriculture
+
+![](slide_files/figure-html/unnamed-chunk-44-1.png)&lt;!-- --&gt;
+]
+
+
+
+---
+&lt;!-- # EXTRACT POINTS EITH ELEVATION DATA --&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###### Map: Grassland
+
+<div id="htmlwidget-0b90fd9d2c0299ad59f1" style="width:1008px;height:540px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0b90fd9d2c0299ad59f1">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["point",440]},{"method":"addFlatGeoBuf","args":["locations_Sk","locations_Sk",null,true,["40.54232   /  74.65300  - PenB","40.54232   /  74.65265  - PenB","40.54232   /  74.65229  - PenB","40.54232   /  74.65123  - PenB","40.54419   /  74.65228  - PenB","40.54465   /  74.65051  - PenB","40.54465   /  74.65015  - PenB","40.54512   /  74.64944  - PenB","40.54512   /  74.64873  - PenB","40.54558   /  74.64802  - PenB","40.54607   /  74.65333  - PenB","40.54653   /  74.65191  - PenB","40.54653   /  74.65121  - PenB","40.54700   /  74.65120  - PenB","40.54699   /  74.64872  - PenB","40.54746   /  74.65049  - PenB","40.54208   /  74.65176  - PenB","40.54255   /  74.65211  - PenB","40.54302   /  74.65317  - PenB","40.54349   /  74.65317  - PenB","40.54349   /  74.65246  - PenB","40.54442   /  74.65069  - PenB","40.54489   /  74.65104  - PenB","40.54535   /  74.64926  - PenB","40.54535   /  74.64856  - PenB","40.54582   /  74.64855  - PenB","40.54630   /  74.65245  - PenB","40.54630   /  74.65209  - PenB","40.54677   /  74.65209  - PenB","40.54676   /  74.65138  - PenB","40.54676   /  74.65103  - PenB","40.54723   /  74.65032  - PenB","40.54770   /  74.65031  - PenB","40.54231   /  74.64875  - KkoC","40.54231   /  74.64839  - KkoC","40.54278   /  74.64945  - KkoC","40.54325   /  74.64945  - KkoC","40.54325   /  74.64874  - KkoC","40.54466   /  74.65299  - KkoC","40.54513   /  74.65298  - KkoC","40.54560   /  74.65334  - KkoC","40.54560   /  74.65298  - KkoC","40.54559   /  74.65192  - KkoC","40.54559   /  74.65157  - KkoC","40.54605   /  74.64908  - KkoC","40.54254   /  74.64928  - KkoC","40.54254   /  74.64892  - KkoC","40.54254   /  74.64857  - KkoC","40.54301   /  74.64963  - KkoC","40.54301   /  74.64928  - KkoC","40.54301   /  74.64892  - KkoC","40.54348   /  74.64892  - KkoC","40.54396   /  74.65281  - KkoC","40.54443   /  74.65317  - KkoC","40.54443   /  74.65246  - KkoC","40.54536   /  74.64997  - KkoC","40.54583   /  74.65280  - KkoC","40.54629   /  74.64997  - KkoC","40.54699   /  74.65014  - PeoC","40.54699   /  74.64979  - PeoC","40.54699   /  74.64908  - PeoC","40.54676   /  74.64961  - PeoC","40.54676   /  74.64890  - PeoC","40.54676   /  74.64855  - PeoC","40.54675   /  74.64819  - PeoC"],{"radius":6,"stroke":true,"color":"#333333","weight":1,"opacity":0.9,"fill":true,"fillColor":null,"fillOpacity":0.6},{"className":"","pane":"point"},"mapview-popup",{"radius":{"to":[3,15],"from":[3,15]},"weight":{"to":[1,10],"from":[1,10]},"opacity":{"to":[0,1],"from":[0,1]},"fillOpacity":{"to":[0,1],"from":[0,1]}}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[74.64802,40.54208,74.65334,40.5477,"locations_Sk","Zoom to locations_Sk","<strong> locations_Sk <\/strong>","bottomright"]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],"locations_Sk",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addLegend","args":[{"colors":["#491261","#481964","#472068","#45266C","#422B70","#403173","#3C3677","#383B7A","#33407D","#2D4580","#2D4580","#254A83","#1B4E86","#075388","#00588B","#005D8D","#00618F","#006691","#006A92","#006A92","#006F94","#007395","#007796","#007B97","#008097","#008498","#008898","#008C98","#008C98","#009097","#009497","#009896","#009B95","#009F94","#00A393","#00A691","#00AA8F","#00AA8F","#00AD8D","#00B08B","#00B388","#00B785","#00BA82","#00BD7F","#00BF7C","#00C278","#00C278","#01C574","#2DC770","#43CA6B","#53CC67","#62CF62","#6FD15D","#7BD358","#87D552","#87D552","#93D74D","#9DD947","#A8DA42","#B2DC3C","#BCDD37","#C6DF32","#D0E02F","#D9E12C","#E3E22B"],"labels":["40.54208   /  74.65176  - PenB","40.54231   /  74.64839  - KkoC","40.54231   /  74.64875  - KkoC","40.54232   /  74.65123  - PenB","40.54232   /  74.65229  - PenB","40.54232   /  74.65265  - PenB","40.54232   /  74.65300  - PenB","40.54254   /  74.64857  - KkoC","40.54254   /  74.64892  - KkoC","40.54254   /  74.64928  - KkoC","40.54255   /  74.65211  - PenB","40.54278   /  74.64945  - KkoC","40.54301   /  74.64892  - KkoC","40.54301   /  74.64928  - KkoC","40.54301   /  74.64963  - KkoC","40.54302   /  74.65317  - PenB","40.54325   /  74.64874  - KkoC","40.54325   /  74.64945  - KkoC","40.54348   /  74.64892  - KkoC","40.54349   /  74.65246  - PenB","40.54349   /  74.65317  - PenB","40.54396   /  74.65281  - KkoC","40.54419   /  74.65228  - PenB","40.54442   /  74.65069  - PenB","40.54443   /  74.65246  - KkoC","40.54443   /  74.65317  - KkoC","40.54465   /  74.65015  - PenB","40.54465   /  74.65051  - PenB","40.54466   /  74.65299  - KkoC","40.54489   /  74.65104  - PenB","40.54512   /  74.64873  - PenB","40.54512   /  74.64944  - PenB","40.54513   /  74.65298  - KkoC","40.54535   /  74.64856  - PenB","40.54535   /  74.64926  - PenB","40.54536   /  74.64997  - KkoC","40.54558   /  74.64802  - PenB","40.54559   /  74.65157  - KkoC","40.54559   /  74.65192  - KkoC","40.54560   /  74.65298  - KkoC","40.54560   /  74.65334  - KkoC","40.54582   /  74.64855  - PenB","40.54583   /  74.65280  - KkoC","40.54605   /  74.64908  - KkoC","40.54607   /  74.65333  - PenB","40.54629   /  74.64997  - KkoC","40.54630   /  74.65209  - PenB","40.54630   /  74.65245  - PenB","40.54653   /  74.65121  - PenB","40.54653   /  74.65191  - PenB","40.54675   /  74.64819  - PeoC","40.54676   /  74.64855  - PeoC","40.54676   /  74.64890  - PeoC","40.54676   /  74.64961  - PeoC","40.54676   /  74.65103  - PenB","40.54676   /  74.65138  - PenB","40.54677   /  74.65209  - PenB","40.54699   /  74.64872  - PenB","40.54699   /  74.64908  - PeoC","40.54699   /  74.64979  - PeoC","40.54699   /  74.65014  - PeoC","40.54700   /  74.65120  - PenB","40.54723   /  74.65032  - PenB","40.54746   /  74.65049  - PenB","40.54770   /  74.65031  - PenB"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":"locations_Sk","extra":null,"layerId":null,"className":"info legend","group":"locations_Sk"}]}],"fitBounds":[40.54208,74.64802,40.5477,74.65334,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+---
+##### Map: Agriculture
+
+<div id="htmlwidget-6fd27ee0ce759654d710" style="width:1008px;height:540px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6fd27ee0ce759654d710">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["point",440]},{"method":"addFlatGeoBuf","args":["locations_Gz","locations_Gz",null,true,["40.54460   /  74.66659  - PeoC","40.54460   /  74.66588  - PeoC","40.54460   /  74.66553  - PeoC","40.54507   /  74.66659  - PeoC","40.54507   /  74.66624  - PeoC","40.54507   /  74.66588  - PeoC","40.54506   /  74.66553  - PeoC","40.54553   /  74.66588  - PeoC","40.54553   /  74.66552  - PeoC","40.54600   /  74.66411  - PeoC","40.54646   /  74.66375  - PeoC","40.54646   /  74.66339  - PeoC","40.54693   /  74.66268  - PeoC","40.54483   /  74.66712  - PeoC","40.54483   /  74.66677  - PeoC","40.54483   /  74.66641  - PeoC","40.54483   /  74.66606  - PeoC","40.54483   /  74.66571  - PeoC","40.54483   /  74.66535  - PeoC","40.54530   /  74.66641  - PeoC","40.54530   /  74.66570  - PeoC","40.54530   /  74.66535  - PeoC","40.54576   /  74.66464  - PeoC","40.54576   /  74.66428  - PeoC","40.54623   /  74.66393  - PeoC","40.54646   /  74.66410  - PeoC","40.54716   /  74.66251  - PeoC","40.54319   /  74.66554  - PenB","40.54319   /  74.66518  - PenB","40.54319   /  74.66341  - PenB","40.54366   /  74.66553  - PenB","40.54366   /  74.66483  - PenB","40.54365   /  74.66376  - PenB","40.54365   /  74.66341  - PenB","40.54413   /  74.66695  - PenB","40.54599   /  74.66269  - PenB","40.54390   /  74.66642  - PenB","40.54389   /  74.66571  - PenB","40.54576   /  74.66322  - PenB","40.54623   /  74.66286  - PenB","40.54670   /  74.66286  - PenB","40.54881   /  74.66693  - KkoD","40.54881   /  74.66622  - KkoD","40.54881   /  74.66586  - KkoD","40.54858   /  74.66675  - KkoD","40.54905   /  74.66710  - KkoD","40.54905   /  74.66675  - KkoD","40.54905   /  74.66639  - KkoD","40.54904   /  74.66604  - KkoD","40.54904   /  74.66533  - KkoD","40.54904   /  74.66498  - KkoD","40.54904   /  74.66462  - KkoD","40.54904   /  74.66427  - KkoD","40.54904   /  74.66391  - KkoD","40.54320   /  74.66660  - KkoC","40.54319   /  74.66625  - KkoC","40.54601   /  74.66729  - KkoC","40.54647   /  74.66729  - KkoC","40.54647   /  74.66694  - KkoC","40.54647   /  74.66658  - KkoC","40.54694   /  74.66516  - KkoC","40.54741   /  74.66693  - KkoC","40.54740   /  74.66552  - KkoC","40.54740   /  74.66516  - KkoC","40.54740   /  74.66268  - KkoC","40.54740   /  74.66233  - KkoC","40.54834   /  74.66587  - KkoC","40.54834   /  74.66480  - KkoC","40.54390   /  74.66713  - KkoC","40.54390   /  74.66677  - KkoC","40.54624   /  74.66641  - KkoC","40.54624   /  74.66605  - KkoC","40.54623   /  74.66428  - KkoC","40.54671   /  74.66711  - KkoC","40.54764   /  74.66463  - KkoC","40.54763   /  74.66215  - KkoC","40.54811   /  74.66640  - KkoC","40.54810   /  74.66427  - KkoC","40.54810   /  74.66392  - KkoC"],{"radius":6,"stroke":true,"color":"#333333","weight":1,"opacity":0.9,"fill":true,"fillColor":null,"fillOpacity":0.6},{"className":"","pane":"point"},"mapview-popup",{"radius":{"to":[3,15],"from":[3,15]},"weight":{"to":[1,10],"from":[1,10]},"opacity":{"to":[0,1],"from":[0,1]},"fillOpacity":{"to":[0,1],"from":[0,1]}}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[74.66215,40.54319,74.66729,40.54905,"locations_Gz","Zoom to locations_Gz","<strong> locations_Gz <\/strong>","bottomright"]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],"locations_Gz",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addLegend","args":[{"colors":["#491462","#481A65","#471F68","#45246B","#44296E","#412D71","#3F3274","#3C3677","#3C3677","#393A7A","#353E7C","#30427F","#2B4681","#244A84","#1B4E86","#0D5288","#00568A","#00568A","#005A8C","#005E8D","#00618F","#006591","#006992","#006C93","#007094","#007495","#007495","#007796","#007B97","#007E97","#008297","#008598","#008898","#008C98","#008F97","#008F97","#009297","#009597","#009896","#009B95","#009E94","#00A193","#00A492","#00A790","#00A790","#00AA8F","#00AD8D","#00AF8B","#00B289","#00B587","#00B785","#00BA82","#00BC80","#00BC80","#00BE7D","#00C17A","#00C377","#0CC573","#2CC770","#3EC96C","#4DCB69","#5ACD65","#5ACD65","#65CF61","#70D15D","#7AD358","#84D454","#8DD650","#96D84B","#9FD946","#A8DA42","#A8DA42","#B0DC3D","#B9DD39","#C1DE35","#C9DF31","#D1E02E","#D8E12C","#E0E22B"],"labels":["40.54319   /  74.66341  - PenB","40.54319   /  74.66518  - PenB","40.54319   /  74.66554  - PenB","40.54319   /  74.66625  - KkoC","40.54320   /  74.66660  - KkoC","40.54365   /  74.66341  - PenB","40.54365   /  74.66376  - PenB","40.54366   /  74.66483  - PenB","40.54366   /  74.66553  - PenB","40.54389   /  74.66571  - PenB","40.54390   /  74.66642  - PenB","40.54390   /  74.66677  - KkoC","40.54390   /  74.66713  - KkoC","40.54413   /  74.66695  - PenB","40.54460   /  74.66553  - PeoC","40.54460   /  74.66588  - PeoC","40.54460   /  74.66659  - PeoC","40.54483   /  74.66535  - PeoC","40.54483   /  74.66571  - PeoC","40.54483   /  74.66606  - PeoC","40.54483   /  74.66641  - PeoC","40.54483   /  74.66677  - PeoC","40.54483   /  74.66712  - PeoC","40.54506   /  74.66553  - PeoC","40.54507   /  74.66588  - PeoC","40.54507   /  74.66624  - PeoC","40.54507   /  74.66659  - PeoC","40.54530   /  74.66535  - PeoC","40.54530   /  74.66570  - PeoC","40.54530   /  74.66641  - PeoC","40.54553   /  74.66552  - PeoC","40.54553   /  74.66588  - PeoC","40.54576   /  74.66322  - PenB","40.54576   /  74.66428  - PeoC","40.54576   /  74.66464  - PeoC","40.54599   /  74.66269  - PenB","40.54600   /  74.66411  - PeoC","40.54601   /  74.66729  - KkoC","40.54623   /  74.66286  - PenB","40.54623   /  74.66393  - PeoC","40.54623   /  74.66428  - KkoC","40.54624   /  74.66605  - KkoC","40.54624   /  74.66641  - KkoC","40.54646   /  74.66339  - PeoC","40.54646   /  74.66375  - PeoC","40.54646   /  74.66410  - PeoC","40.54647   /  74.66658  - KkoC","40.54647   /  74.66694  - KkoC","40.54647   /  74.66729  - KkoC","40.54670   /  74.66286  - PenB","40.54671   /  74.66711  - KkoC","40.54693   /  74.66268  - PeoC","40.54694   /  74.66516  - KkoC","40.54716   /  74.66251  - PeoC","40.54740   /  74.66233  - KkoC","40.54740   /  74.66268  - KkoC","40.54740   /  74.66516  - KkoC","40.54740   /  74.66552  - KkoC","40.54741   /  74.66693  - KkoC","40.54763   /  74.66215  - KkoC","40.54764   /  74.66463  - KkoC","40.54810   /  74.66392  - KkoC","40.54810   /  74.66427  - KkoC","40.54811   /  74.66640  - KkoC","40.54834   /  74.66480  - KkoC","40.54834   /  74.66587  - KkoC","40.54858   /  74.66675  - KkoD","40.54881   /  74.66586  - KkoD","40.54881   /  74.66622  - KkoD","40.54881   /  74.66693  - KkoD","40.54904   /  74.66391  - KkoD","40.54904   /  74.66427  - KkoD","40.54904   /  74.66462  - KkoD","40.54904   /  74.66498  - KkoD","40.54904   /  74.66533  - KkoD","40.54904   /  74.66604  - KkoD","40.54905   /  74.66639  - KkoD","40.54905   /  74.66675  - KkoD","40.54905   /  74.66710  - KkoD"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":"locations_Gz","extra":null,"layerId":null,"className":"info legend","group":"locations_Gz"}]}],"fitBounds":[40.54319,74.66215,40.54905,74.66729,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+
+
+---
+
+#### Next Phase 
+
+--
+###### Estimate the vertical distribution of organic carbo to bedrock or maximum penetration depth
+
+--
+###### Estimate the number of samples baased on the semivariogram to estimate a field
+
+--
+###### Estimate the impact of landuse and soil types on aggregate stability
+
+--
+###### CAST model
+
+
+
+---
+class: center, middle
+
+# That's all for today
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="libs/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script src="libs/cols_macro.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
 "highlightLines": true,
 "countIncrementalSlides": false,
-"ratio": "4:3"
+"ratio": "10:6",
+"navigation": {
+"scroll": false
+}
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
@@ -391,6 +665,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+<script>
+(function() {
+  var divHTML = document.querySelectorAll(".details-open");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details open class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+(function() {
+  var divHTML = document.querySelectorAll(".details");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {
